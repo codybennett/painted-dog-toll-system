@@ -1,0 +1,14 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+mfrc522 = "==0.0.7"
+mysql-connector-repackaged = "==0.3.1"
+"rpi.gpio" = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
