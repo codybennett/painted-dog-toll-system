@@ -6,6 +6,7 @@ import os
 distance = 5
 
 def main():
+    # Load environment variables from .env
     load_dotenv()
 
     ident = input("Identifier:\t")
@@ -16,6 +17,7 @@ def main():
         exiting(ident)
 
 def db_connection():
+    # Defaults to second parameter if env not set (See .env_example)
     host = os.environ.get('db_host', 'localhost')
     name = os.environ.get('db_name', 'paintedtraffic')
     user = os.environ.get('db_user', 'trafficadmin')
