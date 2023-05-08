@@ -42,10 +42,10 @@ def incoming(identifier):
         un = cursor.fetchone()
         print(cursor.rowcount)
         if un[0] is None:
-        cursor.execute(f"INSERT INTO users (name, rfid_uid) VALUES ('{identifier}','123')")
-        db.commit()
-        cursor.execute(f"SELECT MAX(id) from users WHERE name='{identifier}'")
-        un=cursor.fetchone()
+            cursor.execute(f"INSERT INTO users (name, rfid_uid) VALUES ('{identifier}','123')")
+            db.commit()
+            cursor.execute(f"SELECT MAX(id) from users WHERE name='{identifier}'")
+            un=cursor.fetchone()
         
         #print(f"INSERT INTO tollbooth (user_id) VALUES ({un[0]}));")
         cursor.execute(f"INSERT INTO tollbooth (user_id) VALUES ({un[0]});");
