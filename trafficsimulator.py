@@ -1,10 +1,14 @@
 import mysql.connector
+from mysql.connector import errorcode
+from dotenv import load_dotenv
 import os
 
 distance = 5
 
 def main():
-    ident = input("Indentifier:\t")
+    load_dotenv()
+
+    ident = input("Identifier:\t")
     operation = input("Incoming (I) or Exiting (E):\t")
     if operation.upper() == "I":
         incoming(ident)
@@ -12,10 +16,10 @@ def main():
         exiting(ident)
 
 def db_connection():
-    host = os.environ['db_host']
-    name = os.environ['db_name']
-    user = os.environ['db_user']
-    passwd = os.environ['db_pass']
+    host = os.environ.get('db_host', 'localhost')
+    name = os.environ.get('db_name', 'painted_traffic')
+    user = os.environ.get('db_user', 'trafficadmin')
+    passwd = os.environ.get('db_pass', 'paintedadmin')
 
     try:
         return mysql.connector.connect(
