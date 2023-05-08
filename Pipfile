@@ -8,6 +8,7 @@ mfrc522 = "*"
 "rpi.gpio" = "*"
 pytest = "*"
 mysql-connector-python = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
