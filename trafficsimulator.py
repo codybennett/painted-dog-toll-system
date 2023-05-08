@@ -17,7 +17,7 @@ def main():
 
 def db_connection():
     host = os.environ.get('db_host', 'localhost')
-    name = os.environ.get('db_name', 'painted_traffic')
+    name = os.environ.get('db_name', 'paintedtraffic')
     user = os.environ.get('db_user', 'trafficadmin')
     passwd = os.environ.get('db_pass', 'paintedadmin')
 
